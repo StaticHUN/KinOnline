@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KinOnline
 // @namespace    kinonline
-// @version      0.2
+// @version      0.3
 // @description  Watch on Kinopoisk for free!
 // @author       StaticHUN
 // @match        *://www.kinopoisk.ru/*/*
@@ -9,8 +9,8 @@
 // ==/UserScript==
 
 function init() {
-    let art = document.getElementsByClassName('styles_watchOnlineButtonPurchased__2_U4z');
-    if (art.length == 0) {
+    //let art = document.getElementsByClassName('styles_watchOnlineButtonPurchased__2_U4z');
+    //if (art.length == 0) {
         let element = document.querySelector(`div[data-tid="fe27f3c4"]`);//fe27f3c4 - poster; cc89b13d - trailer
         if (element.length != 0) {
             let coords = element.getBoundingClientRect();
@@ -31,12 +31,13 @@ function init() {
                     button.style.top = coords.top - 1 + 'px';
                     button.style.left = '-590px';
                     button.style.minWidth = '1200px';
-                    button.addEventListener('click', () => window.open(url.toString(), '_blank').focus());
+                    const w = 1280, h = 720, l = Number((screen.width/2)-(w/2)-16), t = Number((screen.height/2)-(h/2));
+                    button.addEventListener('click', () => window.open(url.toString(), 'displayWindow', 'width='+w+',height='+h+',resizable=no,menubar=no,scrollbars=no,status=no,toolbar=no,location=no,left='+l+',top='+t));
                     document.body.appendChild(button);
                 }
             }
         }
-    }
+    //}
 }
 
 window.addEventListener('load', init);
