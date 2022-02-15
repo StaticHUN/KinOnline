@@ -9,8 +9,8 @@
 // ==/UserScript==
 
 function init() {
-    //let art = document.getElementsByClassName('styles_watchOnlineButtonPurchased__2_U4z');
-    //if (art.length == 0) {
+    let art = document.getElementsByClassName('styles_watchOnlineButtonPurchased__2_U4z');
+    if (art.length == 0) {
         let element = document.querySelector(`div[data-tid="fe27f3c4"]`);//fe27f3c4 - poster; cc89b13d - trailer
         if (element.length != 0) {
             let coords = element.getBoundingClientRect();
@@ -37,7 +37,7 @@ function init() {
                 }
             }
         }
-    //}
+    }
 }
 
 window.addEventListener('load', init);
