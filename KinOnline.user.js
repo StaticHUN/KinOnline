@@ -10,7 +10,7 @@
 
 function init() {
     let art = document.querySelector(`span[data-tid="6cb8d12f"]`);
-    if ((art == null) || (art.textContent != 'Смотреть фильм')) {
+    if ((art == null) || (art.textContent == 'Купить и смотреть')) {
         let element = document.querySelector(`div[data-tid="fe27f3c4"]`);//fe27f3c4 - poster; cc89b13d - trailer
         if (element.length != 0) {
             let coords = element.getBoundingClientRect();
