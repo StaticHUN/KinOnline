@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KinOnline
 // @namespace    kinonline
-// @version      0.4
+// @version      0.5
 // @description  Watch on Kinopoisk for free!
 // @author       StaticHUN
 // @match        *://www.kinopoisk.ru/*/*
@@ -10,7 +10,8 @@
 
 function init() {
     let art = document.querySelector(`span[data-tid="6cb8d12f"]`);
-    if ((art == null) || (art.textContent == 'Купить и смотреть')) {
+    let nosubscription = document.querySelector(`div[class="styles_subscriptionText__xEiOR"]`);
+    if ((art == null) || (art.textContent == 'Купить и смотреть') || (nosubscription.textContent.length != null)) {
         let element = document.querySelector(`div[data-tid="fe27f3c4"]`);//fe27f3c4 - poster; cc89b13d - trailer
         if (element.length != 0) {
             let coords = element.getBoundingClientRect();
