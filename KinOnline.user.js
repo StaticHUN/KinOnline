@@ -53,7 +53,7 @@ function addButton(url, x, y, w, h) {
     button.style.zIndex = '694194';
     button.style.top = y-28+'px';
     button.style.left = x+'px';
-    const id = url.toString().split('/')[4];
+    const id = location.href.split('/')[4];
     const playerUrl = new URL('https://statichun.ru/videoPlayer.html');
     playerUrl.searchParams.set('id', id);
 
