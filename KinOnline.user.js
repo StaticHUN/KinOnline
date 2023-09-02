@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KinOnline
 // @namespace    kinonline
-// @version      1.0.2
+// @version      1.0.3
 // @description  Watch on Kinopoisk for free!
 // @author       StaticHUN
 // @match        *://www.kinopoisk.ru/*/*
@@ -57,7 +57,7 @@ function addButton(url, x, y, w, h) {
     const playerUrl = new URL('https://statichun.ru/videoPlayer.html');
     playerUrl.searchParams.set('id', id);
 
-    button.addEventListener('click', () => window.open(playerUrl.toString(), 'displayWindow', 'width=657px,height=497px'));
+    button.addEventListener('click', () => window.open(playerUrl.toString(), 'displayWindow', 'width=667px,height=377px'));
     //button.addEventListener('click', () => window.open(playerUrl.toString(), '_blank').focus());
     document.body.appendChild(button);
 }
