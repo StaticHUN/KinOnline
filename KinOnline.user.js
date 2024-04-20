@@ -56,11 +56,7 @@ function addButton(url, x, y, w, h) {
     const id = location.href.split('/')[4];
     const playerUrl = new URL('https://statichun.ru/player.html');
     playerUrl.searchParams.set('id', id);
-<<<<<<< HEAD
     button.addEventListener('click', () => window.open(playerUrl.toString(), 'displayWindow', 'width=680px,height=410px'));
-=======
-    button.addEventListener('click', () => window.open(playerUrl.toString(), 'displayWindow', 'width=680px,height=390px'));
->>>>>>> 7af5ec64c4afa5931545ecb1bae3241dc3e93c97
     document.body.appendChild(button);
 }
 
