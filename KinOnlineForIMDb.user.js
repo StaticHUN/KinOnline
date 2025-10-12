@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KinOnline for IMDb
 // @namespace    kinonline
-// @version      0.8
+// @version      0.9
 // @description  Watch on IMDb for free!
 // @author       StaticHUN
 // @match        *://www.imdb.com/title/*
@@ -49,7 +49,7 @@
 
                 watchlistButton.addEventListener('click', function() {
                     const id = extractIdFromUrl(location.href);
-                    const playerUrl = new URL('https://statichun.ru/cinema');
+                    const playerUrl = new URL('https://statichun.com/cinema');
                     playerUrl.searchParams.set('message', id);
                     window.open(playerUrl.toString());
                 });

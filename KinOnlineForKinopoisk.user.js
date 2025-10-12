@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         KinOnline for Kinopoisk
 // @namespace    kinonline
-// @version      1.0.7
+// @version      1.0.8
 // @description  Watch on Kinopoisk for free!
 // @author       StaticHUN
 // @match        *://www.kinopoisk.ru/film/*
@@ -21,14 +21,14 @@
     }
 
     function addCustomButton() {
-        let posterContainer = document.querySelector('div.styles_posterContainer__F02wH');
+        let posterContainer = document.querySelector('div[class*="styles_posterContainer"]');
 
         if (posterContainer) {
             let newButton = document.createElement('button');
             newButton.textContent = 'Смотреть онлайн';
             newButton.addEventListener('click', function() {
                 const id = extractIdFromUrl(location.href);
-                const playerUrl = new URL('https://statichun.ru/cinema');
+                const playerUrl = new URL('https://statichun.com/cinema');
                 playerUrl.searchParams.set('message', id);
                 window.open(playerUrl.toString());
             });
